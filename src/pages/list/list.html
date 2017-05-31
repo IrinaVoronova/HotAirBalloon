@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Settings</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="bg-page">
+
+  <ion-list>
+    <ion-card-content class="conteiner">
+      <h5> Music</h5>
+      <ion-item>
+        <div class="audio" *ngIf="nativepath" >
+          {{nativepath}}
+        </div>
+        <button ion-button outline item-right icon-right color="secondary" (click)="filechooser()">
+          <span>Music</span>
+           <ion-icon name="arrow-forward"></ion-icon>
+        </button>
+       </ion-item>
+    </ion-card-content>
+
+    <ion-card-content class="conteiner">
+      <h5>Cycles</h5>
+      <ion-item>
+          <input class="input-cycles" id='count_cycle' type="number" [(ngModel)]="value">
+        <button ion-button outline item-right icon-left color="secondary" (click)="cycles()">
+          save
+        </button>
+      </ion-item>
+    </ion-card-content>
+
+   <ion-card-content class="conteiner">
+      <h5>Vibration</h5>
+      <ion-item>
+        <ion-label>vibration</ion-label>
+
+        <ion-toggle (ionChange)="vibratioOnOff(checked)" color="secondary" [(ngModel)]="checked"></ion-toggle>
+
+      </ion-item>
+   </ion-card-content>
+
+  </ion-list>
+
+
+</ion-content>
